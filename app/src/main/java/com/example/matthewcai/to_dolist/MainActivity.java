@@ -2,8 +2,10 @@ package com.example.matthewcai.to_dolist;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
+import android.view.View;
 
 
 import java.util.ArrayList;
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onAddItem(View v) {
-
+        EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
+        String itemText = etNewItem.getText().toString();
+        itemsAdapter.add(itemText);
+        etNewItem.setText("");
     }
 }
